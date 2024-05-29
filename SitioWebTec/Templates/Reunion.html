@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="icon" href="../img/archivo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea,
+        .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: auto; /* Esto centrará horizontalmente el formulario */
+    margin-top: 50px; /* Espacio superior */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    </style>
+
+    <title>Crear Reunion</title> 
+</head>
+<body>
+    
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../img/icono.jpg" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name"></span>
+                    <span class="profession">Sistema</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="../Templates/Docentes.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Menu</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-history icon' ></i>
+                            <span class="text nav-text">Historial</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notificaciones</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="../Templates/Configuracion.html">
+                            <i class='bx bx-cog icon' ></i>
+                            <span class="text nav-text">Configuracion</span>
+                        </a>
+                    </li>
+
+                    
+
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="#" onclick="cerrarSesion()">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="text nav-text">Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </div>
+                    
+        </div>
+    </nav>
+    <section class="home">
+    <img style="margin: 0 1px"; loading="lazy" src="../img/3.jpg" height="90" alt="tec">
+      <img style="margin: 0 1px"; loading="lazy" src="../img/4.jpg" height="90" alt="tec">
+      <img style="margin: 0 1px"; loading="lazy" src="../img/5.jpg" height="90" alt="tec">
+      <img style="margin: 0 1px"; loading="lazy" src="../img/tec.jpg" height="90" alt="tec"> 
+
+
+    
+    <br>
+    <div class="form-container">
+        <h2>Crea tu Reunión</h2>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="meeting-name">Nombre de la Reunión</label>
+                <input type="text" id="meeting-name" name="meeting-name" required>
+            </div>
+            <div class="form-group">
+                <label for="meeting-description">Descripción de la Reunión</label>
+                <textarea id="meeting-description" name="meeting-description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="meeting-location">Lugar de la Reunión</label>
+                <select id="meeting-location" name="meeting-location" required>
+                    <option value="opciones">Selecciona una opcion</option>
+                    <option value="poliforum">Poliforum</option>
+                    <option value="Auditorio">Auditorio</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="meeting-name">Hora de la Reunion</label>
+                <input type="text" id="Hora " name="Hora" required>
+            </div>
+            <div class="form-group">
+                <label for="meeting-name">Hora de la Terminacion</label>
+                <input type="text" id="Terminacion " name="Terminacion" required>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit">Crear</button>
+            </div>
+        </form>
+    </div>
+
+    
+    
+    </section>
+    <script>
+        document.getElementById('meeting-form').addEventListener('submit', function(event) {
+            // Detener el envío del formulario
+            event.preventDefault();
+            
+            // Mostrar la alerta
+            alert('Se ha creado tu reunión.');
+
+            // Opcionalmente, puedes redirigir a otra página después de mostrar la alerta
+            // window.location.href = 'otra_pagina.html';
+        });
+    </script>
+    <script>
+        function cerrarSesion() {
+            // Aquí puedes agregar tu lógica para cerrar sesión, como eliminar las cookies o limpiar la sesión del usuario
+            alert("Has cerrado sesión exitosamente."); // Esto es solo un ejemplo, puedes reemplazarlo con tu propia lógica
+    
+            // Redirigir al usuario a la página de inicio
+            window.location.href = "../Templates/index.html"; // Cambia la ruta según la ubicación real de tu página de inicio
+        }
+    </script>
+    
+
+    <script src="../js/alu.js"></script>
+
+   
+</body>
+</html>

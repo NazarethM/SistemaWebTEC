@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="icon" href="../img/icono.jpg" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+
+    <title>Admin</title> 
+</head>
+<body>
+    
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../img/icono.jpg" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name"></span>
+                    <span class="profession">Sistema</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="../Templates/Admin.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Menu</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="historial_admin.html">
+                            <i class='bx bx-history icon' ></i>
+                            <span class="text nav-text">Historial</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notificaciones</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-cog icon' ></i>
+                            <span class="text nav-text">Configuracion</span>
+                        </a>
+                    </li>
+
+                    
+
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="#" onclick="cerrarSesion()">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="text nav-text">Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </div>
+                    
+        </div>
+    </nav>
+    <section class="home">
+    <img style="margin: 0 1px"; loading="lazy" src="../img/3.jpg" height="90" alt="tec">
+      <img style="margin: 0 1px"; loading="lazy" src="../img/4.jpg" height="90" alt="tec">
+      <img style="margin: 0 1px"; loading="lazy" src="../img/5.jpg" height="90" alt="tec">
+      <img style="margin: 0 1px"; loading="lazy" src="../img/tec.jpg" height="90" alt="tec"> 
+
+      <div class="rectangle">
+        <div class="label-input-group">
+            <img src="../img/usuario.jpg" height="90" alt="tec">
+            <div>
+                <label for="nombre_Admin">Nombre:</label>
+                <input type="text" id="nombre_Admin" placeholder="">
+            </div>
+        </div>
+        <div class="label-input-group">
+            <button type="button" onclick="window.location.href='Reunion_Admin.html';">Crear</button>
+            <div>
+                <label for="RFC_Admin">RFC:</label>
+                <input type="text" id="RFC_Admin" placeholder="">
+            </div>
+        </div>
+    </div>
+    
+    <br>
+    
+    </section>
+    
+    <script>
+        function cerrarSesion() {
+            // Aquí puedes agregar tu lógica para cerrar sesión, como eliminar las cookies o limpiar la sesión del usuario
+            alert("Has cerrado sesión exitosamente."); // Esto es solo un ejemplo, puedes reemplazarlo con tu propia lógica
+    
+            // Redirigir al usuario a la página de inicio
+            window.location.href = "../Templates/index.html"; // Cambia la ruta según la ubicación real de tu página de inicio
+        }
+    </script>
+    
+    <script src="../js/alu.js"></script>
+
+   
+</body>
+</html>

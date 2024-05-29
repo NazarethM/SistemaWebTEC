@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Alumnos</title> 
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../img/icono.jpg" alt="">
+                </span>
+                <div class="text logo-text">
+                    <span class="name"></span>
+                    <span class="profession">Sistema</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="../Templates/index.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Menu</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-history icon'></i>
+                            <span class="text nav-text">Historial</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notificaciones</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-cog icon'></i>
+                            <span class="text nav-text">Configuracion</span>
+                        </a>
+                    </li>
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="#">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Cerrar Sesión</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="home">
+        <div class="imagenes">
+            <img style="margin: 0 1px;" loading="lazy" src="../img/3.jpg" height="90" alt="tec">
+            <img style="margin: 0 1px;" loading="lazy" src="../img/4.jpg" height="90" alt="tec">
+            <img style="margin: 0 1px;" loading="lazy" src="../img/5.jpg" height="90" alt="tec">
+            <img style="margin: 0 1px;" loading="lazy" src="../img/tec.jpg" height="90" alt="tec"> 
+        </div>
+        <style>
+            /* Estilos básicos para el diseño */
+            .imagenes {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 20px;
+            }
+            .imagenes img {
+                max-width: 800px; 
+                max-height: 100px; 
+                height: auto;
+            }
+            h1 {
+                text-align: center;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            tr:hover {
+                background-color: #3d509a;
+            }
+            .exitoso {
+                background-color: #c2f0c2;
+            }
+        </style>
+        <h1>Historial Alumno</h1>
+        <div id="historial">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre de la reunión</th>
+                        <th>Nombre del Alumno</th>
+                        <th>Nº Control</th>
+                        <th>Semestre</th>
+                        <th>Carrera</th>
+                        <th>Fecha</th>
+                        <th>Duración</th>
+                        <th>PDF</th>
+                    </tr>
+                </thead>
+                <tbody id="historial-body">
+                    <!-- Aquí se mostrará el historial de eventos -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="../js/alum.js"></script>
+    <script src="../js/aluPDF.js"></script>
+</body>
+</html>

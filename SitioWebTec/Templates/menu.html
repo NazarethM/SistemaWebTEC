@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Registro</title>
+    <style>
+        /* Estilos básicos para el diseño */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 2000px; /* Ajusta el ancho máximo según tus necesidades */
+        }
+        .menu-item {
+            text-align: center;
+        }
+        .menu-item img {
+            max-width: 150px; /* Ajusta el tamaño según sea necesario */
+            max-height: 150px;
+            display: block;
+            margin: 0 auto; /* Centrar la imagen horizontalmente */
+        }
+        .menu-item button {
+            background-color: transparent; /* Elimina el fondo */
+            border: 2px solid #3d509a; /* Añade un borde */
+            color: #3d509a; /* Color del texto */
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 20px; /* Espacio entre la imagen y el botón */
+            cursor: pointer;
+            width: 100%; /* Asegura que el botón sea tan ancho como su contenedor */
+        }
+        .menu-item button:hover {
+            background-color: #3d509a; /* Cambia el color de fondo al pasar el cursor */
+            color: white; /* Cambia el color del texto al pasar el cursor */
+        }
+       
+        .imagenes img {
+            max-width: 800px;
+            max-height: 100px;
+            height: auto;
+        }
+        .container {
+            text-align: center;
+            margin-bottom: 100px; /* Espacio entre el título y las imágenes */
+        }
+    </style>
+</head>
+<body>
+    <div class="imagenes">
+        <img src="../img/logo2.png" alt="Imagen 1">
+        <img src="../img/logotec.png" alt="Imagen 2">
+    </div>
+    <div class="container">
+        <h1>Registro para los eventos del Instituto Tecnológico de Pabellón de Arteaga, Ags</h1>
+    </div>
+    <div class="menu">
+        <div class="menu-item">
+            <img src="../img/academico.png" alt="Imagen 3" class="small">
+            <button onclick="window.location.href='RegistroAcademico.html'">Academicos</button>
+        </div>
+        <div class="menu-item">
+            <img src="../img/leyendo.png" alt="Imagen 3" class="small">
+            <button onclick="window.location.href='RegistrAlumnos.html'">AlumnosITPA</button>
+        </div>
+        <div class="menu-item">
+            <img src="../img/invitados.png" alt="Imagen 3" class="small">
+            <button onclick="window.location.href='RegistroInvitados.html'">Invitados</button>
+        </div>
+    </div>
+</body>
+</html>

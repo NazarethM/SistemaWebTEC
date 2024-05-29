@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+
+.custom-btn {
+  background-color: #3d509a  ; /* Cambia el color de fondo del botón */
+  color: #ffffff; /* Cambia el color del texto del botón */
+  border: 2px solid #3d509a; /* Agrega un borde de 2px sólido del mismo color que el fondo */
+  border-radius: 8px; /* Agrega bordes redondeados */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Agrega una transición suave */
+}
+
+.custom-btn:hover {
+  background-color: #1f3464; /* Cambia el color de fondo del botón al pasar el mouse */
+  border-color: #231f20; /* Cambia el color del borde al pasar el mouse */
+  color: #ffffff; /* Cambia el color del texto al pasar el mouse */
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #ececec;
+}
+.box-area {
+  width: 930px;
+}
+.right-box {
+  padding: 40px 30px 40px 40px;
+}
+::placeholder {
+  font-size: 16px;
+}
+
+.rounded-4 {
+  border-radius: 20px;
+}
+.rounded-5 {
+  border-radius: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .box-area {
+    margin: 0 10px;
+  }
+  .left-box {
+    height: 100px;
+    overflow: hidden;
+  }
+  .right-box {
+    padding: 20px;
+  }
+}

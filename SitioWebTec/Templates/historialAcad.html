@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial</title>
+
+    <style>
+        /* Estilos básicos para el diseño */
+       
+        .imagenes {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .imagenes img {
+            max-width: 800px; 
+            max-height: 100px; 
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: #3d509a;
+        }
+        .exitoso {
+            background-color: #c2f0c2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imagenes">
+            <img src="../img/logo2.png" alt="Imagen 1">
+            <img src="../img/logotec.png" alt="Imagen 2">
+        </div>
+
+        <h1>Historial Academico</h1>
+
+        <div id="historial">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre de la reunión</th>
+                        <th>Nombre del Academico</th>
+                        <th>Cargo del académico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se mostrará el historial de eventos -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para cargar el historial de eventos
+        window.onload = function() {
+            const alumnoId = '123'; // ID del alumno, esto podría venir de la sesión del usuario o de algún otro método de autenticación
+
+            // Realiza una solicitud GET al backend para obtener el historial de eventos del alumno
+            fetch(`/alumnos/${alumnoId}/historial`)
+                .then(response => response.json())
+                .then(data => {
+                    // Una vez recibidos los datos del historial, muestra la información en la tabla
+                    const historialElement = document.querySelector('#historial tbody');
+                    data.forEach(registro => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${registro.nombre_reunion}</td>
+                            <td>${registro.nombre_alumno}</td>
+                            <td>${registro.numero_control}</td>
+                            <td>${registro.carrera}</td>
+                            <td>${registro.semestre}</td>
+                        `;
+                        if (registro.exitoso) {
+                            row.classList.add('exitoso');
+                        }
+                        historialElement.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error al obtener el historial:', error));
+        };
+    </script>
+</body>
+</html>

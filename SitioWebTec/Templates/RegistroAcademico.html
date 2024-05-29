@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Académico</title>
+
+    <style>
+        /* Estilos básicos para el diseño */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .form-container {
+            margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            border: 2px solid #3d509a;
+            color: #3d509a;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: transparent;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #3d509a;
+            color: white;
+        }
+        .imagenes {
+            display: flex;
+            justify-content: center; 
+            margin-top: 20px;
+        }
+        .imagenes img {
+            max-width: 800px;
+            max-height: 100px;
+            height: auto;
+        }
+        /* Estilos para el modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imagenes">
+            <img src="../img/logo2.png" alt="Imagen 1">
+            <img src="../img/logotec.png" alt="Imagen 2">
+        </div>
+
+        <div class="form-container">
+            <h2>Registro Académico</h2>
+    
+            <form id="registroForm" action="#" method="POST" onsubmit="return mostrarMensajeExito(event)">
+                <label for="nombre_reunion">Nombre de la reunión:</label>
+                <input type="text" id="nombre_reunion" name="nombre_reunion" required>
+
+                <label for="nombre_academico">Nombre del académico:</label>
+                <input type="text" id="nombre_academico" name="nombre_academico" required>
+
+                <label for="cargo_academico">Cargo del académico:</label>
+                <input type="text" id="cargo_academico" name="cargo_academico" required>
+
+                <input type="submit" value="Guardar Registro">
+            </form>
+        </div>
+
+        <!-- Enlace para volver al index.html -->
+        <a href="index.html">Volver al inicio</a>
+    </div>
+
+    <!-- El modal -->
+    <div id="modalExito" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <p>¡Registro exitoso!</p>
+        </div>
+    </div>
+
+    <script>
+        function generarID() {
+            var nombreAcademicoInput = document.getElementById("nombre_academico");
+            var nombreAcademico = nombreAcademicoInput.value;
+            var id = nombreAcademico.replace(/\s+/g, '-').toLowerCase() + '-' + Date.now();
+            var idInput = document.createElement("input");
+            idInput.type = "hidden";
+            idInput.name = "id_academico";
+            idInput.value = id;
+            var formulario = document.getElementById("registroForm");
+            formulario.appendChild(idInput);
+        }
+
+        function mostrarMensajeExito(event) {
+            event.preventDefault(); // Evita el envío real del formulario
+            const form = document.getElementById('registroForm');
+            const modal = document.getElementById('modalExito');
+
+            // Genera el ID antes de mostrar el modal
+            generarID();
+
+            // Simula el procesamiento y muestra el modal de éxito
+            setTimeout(() => {
+                form.reset();
+                modal.style.display = 'block';
+            }, 500); // Simula un retraso para mostrar el mensaje
+
+            return false; // Evita el envío real del formulario
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('modalExito');
+            modal.style.display = 'none';
+        }
+
+        // Cerrar el modal si el usuario hace clic fuera del contenido del modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalExito');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

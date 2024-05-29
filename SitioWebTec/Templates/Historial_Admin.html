@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="icon" href="../img/historia.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Historial</title>
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../img/icono.jpg" alt="">
+                </span>
+                <div class="text logo-text">
+                    <span class="name"></span>
+                    <span class="profession">Sistema</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="../Templates/Admin.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Menu</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-history icon'></i>
+                            <span class="text nav-text">Historial</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notificaciones</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-cog icon'></i>
+                            <span class="text nav-text">Configuracion</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li>
+                    <a href="#" onclick="cerrarSesion()">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Cerrar Sesión</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <section class="home">
+        <div class="images-container">
+            <img style="margin: 0 1px;" loading="lazy" src="../img/3.jpg" height="90" alt="tec">
+            <img style="margin: 0 1px;" loading="lazy" src="../img/4.jpg" height="90" alt="tec">
+            <img style="margin: 0 1px;" loading="lazy" src="../img/5.jpg" height="90" alt="tec">
+            <img style="margin: 0 1px;" loading="lazy" src="../img/tec.jpg" height="90" alt="tec">
+        </div>
+        <div class="table-container">
+            <h1>Tabla de Datos</h1>
+            <input type="text" id="searchInput" placeholder="Buscar en la tabla...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Encabezado 1</th>
+                        <th>Encabezado 2</th>
+                        <th>Encabezado 3</th>
+                        <th>Encabezado 4</th>
+                        <th>Acciones</th> <!-- Nueva columna para botones -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dato 1</td>
+                        <td>Dato 2</td>
+                        <td>Dato 3</td>
+                        <td>Dato 4</td>
+                        <td>
+                            <button class="action-button ver-button" onclick="verDato('Dato 1')">
+                                <i class='bx bx-show'></i> Ver
+                            </button>
+                            <button class="action-button modificar-button" onclick="modificarDato('Dato 1')">
+                                <i class='bx bx-edit'></i> Modificar
+                            </button>
+                            <button class="action-button eliminar-button" onclick="eliminarDato('Dato 1')">
+                                <i class='bx bx-trash'></i> Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dato 5</td>
+                        <td>Dato 6</td>
+                        <td>Dato 7</td>
+                        <td>Dato 8</td>
+                        <td>
+                            <button class="action-button ver-button" onclick="verDato('Dato 5')">
+                                <i class='bx bx-show'></i> Ver
+                            </button>
+                            <button class="action-button modificar-button" onclick="modificarDato('Dato 5')">
+                                <i class='bx bx-edit'></i> Modificar
+                            </button>
+                            <button class="action-button eliminar-button" onclick="eliminarDato('Dato 5')">
+                                <i class='bx bx-trash'></i> Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script>
+        function cerrarSesion() {
+            alert("Has cerrado sesión exitosamente.");
+            window.location.href = "../Templates/index.html";
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const searchText = this.value.toLowerCase();
+            const rows = document.querySelectorAll('table tbody tr');
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                let match = false;
+
+                cells.forEach(cell => {
+                    if (cell.textContent.toLowerCase().includes(searchText)) {
+                        match = true;
+                    }
+                });
+
+                if (match) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        function verDato(dato) {
+            alert(`Ver: ${dato}`);
+        }
+
+        function modificarDato(dato) {
+            alert(`Modificar: ${dato}`);
+        }
+
+        function eliminarDato(dato) {
+            alert(`Eliminar: ${dato}`);
+        }
+    </script>
+    <script src="../js/alu.js"></script>
+</body>
+</html>

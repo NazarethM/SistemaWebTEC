@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="../img/configuracion.png" type="image/x-icon">
+
+    <title>Configuración</title> 
+    <style>
+        .config-container {
+            margin: 20px;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .config-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .config-item {
+            margin-bottom: 15px;
+        }
+
+        .config-item label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .config-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .config-item select, .config-item input[type="checkbox"], .config-item button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .config-item button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .config-item button:hover {
+            background-color: #0056b3;
+        }
+
+        .config-item .icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../img/icono.jpg" alt="">
+                </span>
+                <div class="text logo-text">
+                    <span class="name"></span>
+                    <span class="profession">Sistema</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="../Templates/Alumnos.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Menu</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="Historial_Alumnos">
+                            <i class='bx bx-history icon' ></i>
+                            <span class="text nav-text">Historial</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notificaciones</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="../Templates/Configuracion.html">
+                            <i class='bx bx-cog icon' ></i>
+                            <span class="text nav-text">Configuración</span>
+                        </a>
+                    </li>
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="#" onclick="cerrarSesion()">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="text nav-text">Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="home">
+        <img style="margin: 0 1px;" loading="lazy" src="../img/3.jpg" height="90" alt="tec">
+        <img style="margin: 0 1px;" loading="lazy" src="../img/4.jpg" height="90" alt="tec">
+        <img style="margin: 0 1px;" loading="lazy" src="../img/5.jpg" height="90" alt="tec">
+        <img style="margin: 0 1px;" loading="lazy" src="../img/tec.jpg" height="90" alt="tec">
+        <br>
+        <div class="config-container">
+            <h2>Configuración</h2>
+            <div class="config-item">
+                <label for="theme">Cambiar Tema:</label>
+                <select id="theme">
+                    <option value="light">Claro</option>
+                    <option value="dark">Oscuro</option>
+                </select>
+            </div>
+            <div class="config-item">
+                <label for="notifications">
+                    <input type="checkbox" id="notifications">
+                    Activar Notificaciones
+                </label>
+            </div>
+            <div class="config-item">
+                <label for="language">Idioma:</label>
+                <select id="language">
+                    <option value="es">Español</option>
+                    <option value="en">Inglés</option>
+                </select>
+            </div>
+            <div class="config-item">
+                <button onclick="guardarConfiguracion()">
+                    <i class='bx bx-save icon'></i> Guardar Configuración
+                </button>
+            </div>
+        </div>
+    </section>
+    <script>
+        function cerrarSesion() {
+            alert("Has cerrado sesión exitosamente.");
+            window.location.href = "../Templates/index.html";
+        }
+
+        function guardarConfiguracion() {
+            alert("Configuración guardada correctamente.");
+        }
+    </script>
+    <script src="../js/alu.js"></script>
+</body>
+</html>
